@@ -1,0 +1,4 @@
+Import-Module ActiveDirectory
+Get-ADUser -Filter * -SearchBase "dc=ad,dc=lylesgroup,dc=com" -Properties CanonicalName,CN,whenChanged,whenCreated | 
+
+Export-Csv  -Path "c:\Temp\AD-Users_$((Get-Date).ToString('yyyy-MM-dd_hh-mm-ss')).csv" 
